@@ -1,7 +1,6 @@
 jQuery(document).ready(function($) {
     // Handle tab clicks
     $('.tabs li').on('click', function() {
-        alert('heheh');
         var category = $(this).data('category');
         
         // Set active class on selected tab
