@@ -44,9 +44,9 @@ if ($fields) {
                     if (is_array($value)) {
                         foreach ($value as $val) {
                             if (is_array($val)) {
-                            $banner_image = $val['b-image']['url'];
-                            $banner_heading = $val['b-title'];
-                            $button_text = $val['b-button'];
+                            $banner_image = isset($val['b-image']['url']) ? $val['b-image']['url'] : ''; // Replace with a default image URL or handle as needed
+                            $banner_heading = isset($val['b-title']) ? $val['b-title'] : ''; // Replace with a default heading or handle as needed
+                            $button_text = isset($val['b-button']) ? $val['b-button'] : ''; // Replace with a default button text or handle as needed
             ?>
             <?php if( !empty($banner_image)){?>
             <div class="carousel-item <?php echo $active ? 'active' : ''; ?>">
@@ -80,8 +80,8 @@ if ($fields) {
                         foreach ($value as $val) {
                             if (is_array($val)) {
                                 
-                           $banner_image = $val['s-image']['url'];
-                            $banner_heading = $val['s-title'];
+                            $banner_image = isset($val['s-image']['url']) ? $val['s-image']['url'] : 'default_image_url';
+                            $banner_heading = isset($val['s-title']) ? $val['s-title'] : '';
                             
             ?>
             <?php if( !empty($banner_image) && !empty($banner_heading)){?>
@@ -129,10 +129,10 @@ echo do_shortcode('[product_category_grid parent="by category"]');?>
                         foreach ($value as $val) {
                             if (is_array($val)) {
 
-                                $qulite_image = $val['q-image']['url'];
-                                $qulite_alt = $val['q-image']['alt'];
-                                $qulite_heading = $val['q-title'];
-                                $qulite_text = $val['q-text'];
+                                $qulite_image = isset($val['q-image']['url']) ? $val['q-image']['url'] : '';
+                                $qulite_alt = isset($val['q-image']['alt']) ? $val['q-image']['alt'] : '';
+                                $qulite_heading = isset($val['q-title']) ? $val['q-title'] : '';
+                                $qulite_text = isset($val['q-text']) ? $val['q-text'] : '';
 
                                 ?>
                                 <?php if (!empty($qulite_image) && !empty($qulite_heading) && !empty($qulite_text)) { ?>
